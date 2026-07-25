@@ -1,0 +1,10 @@
+﻿services:
+  backend:
+    build: .
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres.tpemrxixbugzjfrcgday:xeZIOJhUY67SIQW4@aws-0-eu-west-3.pooler.supabase.com:5432/postgres
